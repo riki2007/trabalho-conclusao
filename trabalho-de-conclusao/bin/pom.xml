@@ -14,8 +14,9 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>1.5.17.RELEASE</version>
+		<relativePath/> 
+			<!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -25,6 +26,7 @@
 	</properties>
 
 	<dependencies>
+		<!-- DEPENDENCIA THYMELEAFE -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -33,32 +35,41 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<!-- DEPENDENCIA JPA -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>		
-
+		</dependency>
+		<!-- DEPENDENCIA DEV TOOLS SPRING -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- DEPENDENCIA WEBJARS -->
 		<dependency>
 			<groupId>org.webjars</groupId>
-			<artifactId>webjars-locator-core</artifactId>
+			<artifactId>webjars-locator</artifactId>
 		</dependency>
-			
+		<!-- DEPENDENCIA BOTSTRAP -->
 		<dependency>
 		    <groupId>org.webjars</groupId>
 		    <artifactId>bootstrap</artifactId>
 		    <version>4.0.0</version>
 		</dependency>
+		<!-- DEPENDENCIA OPEN-ICONIC -->
 		<dependency>
 		    <groupId>org.webjars.bower</groupId>
 		    <artifactId>open-iconic</artifactId>
 		    <version>1.1.1</version>
 		</dependency>
+		<!-- DEPENDENCIA JQUERY -->
 		<dependency>
 		    <groupId>org.webjars</groupId>
 		    <artifactId>jquery</artifactId>
@@ -68,24 +79,14 @@
 		    <groupId>org.webjars.bower</groupId>
 		    <artifactId>jquery-mask-plugin</artifactId>
 		    <version>1.14.13</version>
-		</dependency>	
-		
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
 		</dependency>
-		
+		<!-- DEPENDENCIA MYSQL -->
 		<dependency>
-			<groupId>nz.net.ultraq.thymeleaf</groupId>
-			<artifactId>thymeleaf-layout-dialect</artifactId>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <scope>runtime</scope>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+	
 	</dependencies>
 
 	<build>
@@ -96,5 +97,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
