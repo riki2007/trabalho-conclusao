@@ -48,8 +48,5 @@ public enum UF {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
-	
-	
+
 }
