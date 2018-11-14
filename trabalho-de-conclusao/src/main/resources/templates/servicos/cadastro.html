@@ -13,10 +13,12 @@
 	                    </li>
 	                </ul>
 	            </div>
+	            <div>
 	            <a class="btn btn-primary btn-md" href="/servicos/listar" role="button">
 	                <span class="oi oi-spreadsheet" title="Cadastro" aria-hidden="true"></span>
 	                <span>Listar Serviços</span>
 	            </a>
+	           
 	        </nav>
 	
 	        <div class="container" id="cadastro">
@@ -27,16 +29,18 @@
 	                        <input type="text" class="form-control" id="nome" placeholder="Nome Serviço" autofocus="autofocus"
 	                               name="nome" value=""/>
 	                    </div>
-	                    <div class="form-group col-md-4">
-	                        <label for="departamento">Departamento</label>
-	                        <select id="departamento" class="form-control" name="departamento">
-	                            <option value="">Selecione</option>
-	                            <option value="3">Administração</option>
-	                            <option value="2">Contabilidade</option>
-	                            <option value="1">Recursos Humanos</option>
-	                            <option value="4">Tecnologia da Informação</option>
-	                        </select>
+	                    <div class="form-group col-md-6">
+	                        <label for="nome">Descrição do Serviço</label>
+	                        <input type="text" class="form-control" id="descricao" placeholder="Descrição Serviço" autofocus="autofocus"
+	                               name="descricao" value=""/>
 	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="nome">Valor Serviço R$</label>
+	                        <input type="text" class="form-control" data-mask="#.##0,00"
+	                               data-mask-reverse="true" id="valor" 
+	                               name="valor" value=""/>
+	                    </div>
+	                    
 	                </div>
 	                <input type="hidden" id="id" name="id" value=""/>
 	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>

@@ -36,26 +36,35 @@
 	                        <th>Endereço</th>
 	                        <th>Ação</th>
 	                    </tr>
+
 	                    </thead>
 	                    <tbody>
-		                    <tr th:each="c : ${clientes}">
-		                        <td th:text="${c.id}">1</td>
-		                        <td th:text="${c.nome}">Carlos Henrique</td>
-		                        <td th:text="${c.cpf}">000.111.222.33</td>
-		                        <td th:text="${c.email}">carlosh@mycompany.com</td>
-		                        <td th:text="${c.telefone}">45 998707070</td>
-		                        
-		                        <td colspan="2">
-		                            <a class="btn btn-info btn-sm" th:href="@{/clientes/editar/{id} (id=${c.id}) }" role="button">
-		                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
-		                            </a>
-		                            <button th:id="${ 'btn_clientes/excluir/' + c.id}" type="button" class="btn btn-danger btn-sm"
-		                            		data-toggle="modal" data-target="#myModal">
-		                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
-		                            </button>
-		                        </td>
-		                    </tr>
+	                    <tr>
+	                        <td>1</td>
+	                        <td>Jorge da Silva</td>
+	                        <td>000.111.333.44</td>
+	                        <td>jorge@mycompany.com</td>
+	                        <td>45999717273</td>
+	                        <td>
+	                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+	                                    data-toggle="popover" data-placement="top"
+	                                    data-content="Rua Euclides da Cunha, 260 Fundos - Centro, São Miguel do Iguaçu - PR - 85877-000">
+	                                <span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
+	                            </button>
+	                        </td>
+	                        <td></td>
+	                        <td colspan="2">
+	                            <a class="btn btn-info btn-sm" href="/funcionarios/editar/1" role="button">
+	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
+	                            </a>
+	                            <button id="btn_clientes/excluir/1" type="button" class="btn btn-danger btn-sm"
+	                                    data-toggle="modal" data-target="#myModal">
+	                                <span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
+	                            </button>
+	                        </td>
+	                    </tr>
 	                    </tbody>
+	                    
 	                </table>
 	            </div>
 	        </div>
