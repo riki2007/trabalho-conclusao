@@ -1,14 +1,34 @@
 package br.eti.carlosgeorgi.trabalhodeconclusaoboot.domain;
 
-import java.io.Serializable;
+
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
 
 @SuppressWarnings("serial")
-public class Pessoa extends AbstractEntity<Serializable>{ 
-	//ATRIBUTOS
+@MappedSuperclass
+public class Pessoa extends AbstractEntity<Long>{ 
+	
+	//############ATRIBUTOS#########
+	
+	@Column(nullable = false)
 	private String nome;
+	@Column(nullable = false)
 	private String cpf;
+	@Column(nullable = false)
 	private String email;
+	@Column(nullable = false)
 	private String telefone;
+	
+	//############RELACIONAMENTOS#########
+	
+		@OneToOne(cascade = CascadeType.ALL)
+		@JoinColumn(name = "endereco_id_fk")
+		private Endereco endereco;	
+		
 	
 	//############GETTS AND SETTERs#########
 
@@ -36,6 +56,4 @@ public class Pessoa extends AbstractEntity<Serializable>{
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
-	
 }

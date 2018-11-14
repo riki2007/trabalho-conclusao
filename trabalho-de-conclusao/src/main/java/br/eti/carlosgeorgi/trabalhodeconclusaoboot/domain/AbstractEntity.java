@@ -7,12 +7,15 @@ import javax.persistence.*;
 @SuppressWarnings("serial")
 @MappedSuperclass
 public abstract class AbstractEntity <ID extends Serializable> implements Serializable {
-		
+	
+	//############ATRIBUTOS#########
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private ID id;
 
-	//get-set
+	//############GETTS AND SETTERs#########
+	
 	public ID getId() {
 		return id;
 	}
@@ -21,6 +24,8 @@ public abstract class AbstractEntity <ID extends Serializable> implements Serial
 		this.id = id;
 	}
 
+	//############METODOS#########
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
