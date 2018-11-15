@@ -14,7 +14,7 @@
 	                        </li>
 	                    </ul>
 	                </div>
-	                <a class="btn btn-primary btn-md" href="@{/funcionarios/listar}" role="button">
+	                <a class="btn btn-primary btn-md" href="@{/funcionarios1/listar}" role="button">
 	                    <span class="oi oi-spreadsheet" title="Cadastro" aria-hidden="true"></span>
 	                    <span>Listar Funcionários</span>
 	                </a>
@@ -22,80 +22,43 @@
 	        </div>
 	
 	        <div class="container" id="cadastro">
-	            <form action="/funcionarios/salvar" method="POST">
+	            <form action="/funcionarios1/salvar" method="POST">
 	                <div class="form-row">
-	                    <div class="form-group col-md-6">
-	                        <label for="nome">Nome do Funcionário</label>
-	                        <input type="text" class="form-control" id="nome" placeholder="Nome Completo"
-	                               autofocus="autofocus" name="nome" value=""/>
-	                        <div class="invalid-feedback">
-	
-	                        </div>
+		                    <div class="form-group col-md-6">
+		                        <label for="nome">Nome</label>
+		                        <input type="text" class="form-control" id="nome" placeholder="Nome Cliente" autofocus="autofocus"
+		                               name="nome" value=""/>
+		                        <label for="nome">CPF</label>
+		                        <input type="text" class="form-control" id="descricao" autofocus="autofocus"
+		                               name="cpf" value=""/>
+		                    </div>
+		                    <div class="form-group col-md-4">
+		                       <label for="nome">Email</label>
+		                        <input type="text" class="form-control" id="email" placeholder="Email Cliente" autofocus="autofocus"
+		                               name="email" value=""/>
+		                       <label for="nome">Telefone</label>
+		                        <input type="text" class="form-control" id="telefone" placeholder="Telefone" autofocus="autofocus"
+		                               name="telefone" value=""/>
+		                    </div>
 	                    </div>
-	                    <div class="form-group col-md-6">
-	                        <label for="salario">Salário Bruto</label>
-	                        <input type="text" class="form-control" id="salario" data-mask="#.##0,00"
-	                               data-mask-reverse="true" name="salario" value=""/>
-	                        <div class="invalid-feedback">
-	
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="form-row">
-	                    <div class="form-group col-md-6">
-	                        <label for="dataEntrada">Data de Entrada</label>
-	                        <input type="date" class="form-control" id="dataEntrada" name="dataEntrada" value=""/>
-	                        <div class="invalid-feedback">
-	
-	                        </div>
-	                    </div>
-	                    <div class="form-group col-md-6">
-	                        <label for="dataSaida">Data de Saída</label>
-	                        <input type="date" class="form-control" id="dataSaida" name="dataSaida" value=""/>
-	                        <div class="invalid-feedback">
-	
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="form-row">
-	                    <div class="form-group col-md-6">
-	                        <label for="cargo">Cargo</label>
-	                        <select id="cargo" class="form-control" name="cargo">
-	                            <option value="">Selecione...</option>
-	                            <option value="1">Auxiliar Contábil</option>
-	                            <option value="2">Auxiliar Administrativo</option>
-	                            <option value="3">Contador</option>
-	                            <option value="4">Adminitrador</option>
-	                            <option value="5">Programado PHP</option>
-	                            <option value="6">Desenvolvedor Java Jr.</option>
-	                            <option value="7">Desenvolvedor Java Pleno</option>
-	                            <option value="8">Desenvolvedor Java Senior</option>
-	                            <option value="9">Auxiliar de RH</option>
-	                            <option value="10">Coordenador de RH</option>
-	                            <option value="11">Psicologo</option>
-	                        </select>
-	                        <div class="invalid-feedback">
-	
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="form-row">
-	                    <div class="form-group col-md-6">
-	                        <label for="cidade">Cidade</label>
-	                        <input type="text" class="form-control" id="cidade" name="endereco.cidade" value=""/>
-	                        <div class="invalid-feedback">
-	
-	                        </div>
-	                    </div>
-	                    <div class="form-group col-md-6">
-	                        <label for="logradouro">Logradouro</label>
-	                        <input type="text" class="form-control" id="logradouro" placeholder="logradouro sem número"
-	                               name="endereco.logradouro" value=""/>
-	                        <div class="invalid-feedback">
-	
-	                        </div>
-	                    </div>
-	                </div>
+	                    
+	                    <div class="form-row">
+		                    <div class="form-group col-md-6">
+		                        <label for="cidade">Cidade</label>
+		                        <input type="text" class="form-control" id="cidade" name="endereco.cidade" value=""/>
+		                        <div class="invalid-feedback">
+		
+		                        </div>
+		                    </div>
+		                    <div class="form-group col-md-6">
+		                        <label for="logradouro">Logradouro</label>
+		                        <input type="text" class="form-control" id="logradouro" placeholder="logradouro sem número"
+		                               name="endereco.logradouro" value=""/>
+		                        <div class="invalid-feedback">
+		
+		                        </div>
+		                    </div>
+	                	</div>
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="numero">Número</label>
