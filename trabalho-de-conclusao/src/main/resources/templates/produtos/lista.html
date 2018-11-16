@@ -33,7 +33,7 @@
 	                    </tr>
 	                    </thead>
 	                    <tbody>
-	                    <tr>
+	                    <tr th:each="#{}">
 	                        <td>1</td>
 	                        <td>Teclado USB</td>
 	                        <td>Teclado Fortrek PRETO</td>
@@ -43,61 +43,17 @@
 	                            <a class="btn btn-info btn-sm" href="/produtos/editar/1" role="button">
 	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 	                            </a>
-	                            <button type="button" class="btn btn-danger btn-sm" >
+	                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
 	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
 	                            </button>
 	                        </td>
 	                    </tr>
-	                    <tr>
-	                        <td>2</td>
-	                        <td>Mouse USB</td>
-	                        <td>Mouse Fortrek PRETO</td>
-	                        <td>10</td>
-	                        <td>15,00</td>
-	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/produtos/editar/2" role="button">
-	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
-	                            </a>
-	                            <button type="button" class="btn btn-danger btn-sm" >
-	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
-	                            </button>
-	                        </td>
-	                    </tr>
-	                    <tr>
-	                        <td>3</td>
-	                        <td>HD 500Gb </td>
-	                        <td>Seagate</td>
-	                        <td>5</td>
-	                        <td>300,00</td>
-	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/produtos/editar/3" role="button">
-	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
-	                            </a>
-	                            <button type="button" class="btn btn-danger btn-sm" >
-	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
-	                            </button>
-	                        </td>
-	                    </tr>
-	                   <tr>
-	                        <td>4</td>
-	                        <td>Pen Drive Sony 8Gb </td>
-	                        <td>Sony Tamanho Padrão</td>
-	                        <td>15</td>
-	                        <td>40,00</td>
-	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/produtos/editar/4" role="button">
-	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
-	                            </a>
-	                            <button type="button" class="btn btn-danger btn-sm" >
-	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
-	                            </button>
-	                        </td>
-	                    </tr>
-	                   
 	                    </tbody>
 	                </table>
 	            </div>
 	        </div>
+	        
+	        <div th:replace="fragments/modal :: modal"></div>
 	        
 	    </section>
 </body>
