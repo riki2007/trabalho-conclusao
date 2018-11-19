@@ -32,49 +32,22 @@
 	                    </tr>
 	                    </thead>
 	                    <tbody>
-	                    <tr>
-	                        <td>1</td>
-	                        <td>Limpeza</td>
-	                        <td>Limpeza Interna + Troca pasta térmica</td>
-	                        <td>30,00</td>
+	                    <tr th:each="s : ${servicos}">
+	                        <td th:text="${s.id}">1</td>
+	                        <td th:text="${s.nome}">Teclado USB</td>
+	                        <td th:text="${s.descricao}">Teclado Fortrek PRETO</td>
+	                        <td th:text="${s.valor}">15,00</td>
 	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/servicos/editar/1" role="button">
+	                            <a class="btn btn-info btn-sm" th:href="@{/servicos/editar/{id} (id=${s.id})}" role="button">
 	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 	                            </a>
-	                            <button type="button" class="btn btn-danger btn-sm" >
+	                            <button th:id ="${'btn_servicos/excluir/'+ s.id }" type="button" class="btn btn-danger btn-sm" 
+	                            		data-toggle="modal" data-target="#myModal">
 	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
 	                            </button>
 	                        </td>
 	                    </tr>
-	                    <tr>
-	                        <td>2</td>
-	                        <td>Formatação PC</td>
-	                        <td>Instalação Sistema Operacional e programas Basicos</td>
-	                        <td>80,00</td>
-	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/servicos/editar/2" role="button">
-	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
-	                            </a>
-	                            <button type="button" class="btn btn-danger btn-sm" >
-	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
-	                            </button>
-	                        </td>
-	                    </tr>
-	                    <tr>
-	                        <td>3</td>
-	                        <td>Formatação Notebook</td>
-	                        <td>Instalação Sistema Operacional e programas Basicos</td>
-	                        <td>100,00</td>
-	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/servicos/editar/3" role="button">
-	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
-	                            </a>
-	                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
-	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
-	                            </button>
-	                        </td>
-	                    </tr>
-	                    
+
 	                    </tbody>
 	                </table>
 	            </div>

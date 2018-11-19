@@ -1,12 +1,9 @@
 package br.eti.carlosgeorgi.trabalhodeconclusaoboot.domain;
 
 
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
+
 
 @SuppressWarnings("serial")
 @MappedSuperclass
@@ -24,12 +21,12 @@ public class Pessoa extends AbstractEntity<Long>{
 	private String telefone;
 	
 	//############RELACIONAMENTOS#########
-	
+	/*
 		@OneToOne(cascade = CascadeType.ALL)
 		@JoinColumn(name = "endereco_id_fk")
 		private Endereco endereco;	
 		
-	
+	*/
 	//############GETTS AND SETTERs#########
 
 	public String getNome() {

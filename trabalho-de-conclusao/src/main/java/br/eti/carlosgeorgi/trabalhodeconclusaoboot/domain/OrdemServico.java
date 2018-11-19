@@ -2,6 +2,7 @@ package br.eti.carlosgeorgi.trabalhodeconclusaoboot.domain;
 
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,6 +13,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 
 @SuppressWarnings("serial")
 @Entity
@@ -30,8 +36,18 @@ public class OrdemServico extends AbstractEntity<Long>{
 	@Column(nullable = false)
 	@Enumerated(EnumType.ORDINAL)
 	private Status status;
+	
+	@NumberFormat(style = Style.CURRENCY , pattern = "#,##0.00")
 	@Column(nullable = false)
 	private BigDecimal total;
+	
+	@DateTimeFormat(iso = ISO.DATE)
+	@Column(name= "data_entrada", nullable = false, columnDefinition = "DATE")
+	private LocalDate dataEntrada;
+	
+	@DateTimeFormat(iso = ISO.DATE)
+	@Column(name= "data_saida", nullable = false, columnDefinition = "DATE")
+	private LocalDate dataSaida;
 	
 	//############RELACIONAMENTOS#########
 	@ManyToOne
@@ -51,8 +67,46 @@ public class OrdemServico extends AbstractEntity<Long>{
 	
 	//############GETTS AND SETTERs#########
 	
+	
+	
 	public String getEquipamento() {
 		return equipamento;
+	}
+	public LocalDate getDataEntrada() {
+		return dataEntrada;
+	}
+	public void setDataEntrada(LocalDate dataEntrada) {
+		this.dataEntrada = dataEntrada;
+	}
+	public LocalDate getDataSaida() {
+		return dataSaida;
+	}
+	public void setDataSaida(LocalDate dataSaida) {
+		this.dataSaida = dataSaida;
+	}
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public Funcionario1 getFuncionario() {
+		return funcionario;
+	}
+	public void setFuncionario(Funcionario1 funcionario) {
+		this.funcionario = funcionario;
+	}
+	public List<Servico> getServicos() {
+		return servicos;
+	}
+	public void setServicos(List<Servico> servicos) {
+		this.servicos = servicos;
+	}
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
 	public void setEquipamento(String equipamento) {
 		this.equipamento = equipamento;

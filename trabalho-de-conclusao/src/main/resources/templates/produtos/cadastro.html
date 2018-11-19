@@ -20,7 +20,11 @@
 	        </nav>
 	
 	        <div class="container" id="cadastro">
-	            <form th:action="@{/produtos/salvar}" th:object="${produto}" method="POST">
+	        
+				<div th:replace="fragments/alert"></div>
+	        
+	            <form th:action="${produto.id == null} ? @{/produtos/salvar} : @{/produtos/editar}" 
+	            		th:object="${produto}" method="POST">
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="nome">Nome</label>
@@ -35,12 +39,12 @@
 	                        <input type="text" class="form-control" id="qtd" placeholder="Quantidade Produto" autofocus="autofocus"
 	                               th:field="*{quantidade}"/>
 	                        <label for="nome">Valor</label>
-	                        <!--  <input type="text" class="form-control" id="valor" data-mask="#.##0,00"
+	                        <input type="text" class="form-control" id="valor" data-mask="#.##0,00"
 	                               data-mask-reverse="true"
-	                               th:field="*{valor}"/>-->
+	                               th:field="*{valor}"/>
 	                    </div>
 	                </div>
-	                <input type="hidden" id="id" name="id" value=""/>
+	                <input type="hidden" id="id" th:field="*{id}"/>
 	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
 	            </form>
 	        </div>

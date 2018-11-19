@@ -15,4 +15,6 @@ public interface ProdutoService {
     Produto buscarPorId(Long id);
 
     List<Produto> buscarTodos();
+
+	boolean ProdutoTemOrdens(Long id);
 }

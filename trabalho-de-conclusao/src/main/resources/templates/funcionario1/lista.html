@@ -12,7 +12,7 @@
 	                        <span>Lista de Funcionários</span>
 	                    </li>
 	                </ul>
-	                <a class="btn btn-primary btn-md" href="/funcionarios/cadastrar" role="button">
+	                <a class="btn btn-primary btn-md" href="/funcionarios1/cadastrar" role="button">
 	                    <span class="oi oi-plus" title="Cadastro" aria-hidden="true"></span>
 	                    <span>Cadastrar Funcionários</span>
 	                </a>
@@ -80,28 +80,37 @@
 	                    </thead>
 	                    
 	                    <tbody>
-		                   <tr>
-	                        <td>1</td>
-	                        <td>Jean Costa</td>
-	                        <td>000.111.333.44</td>
-	                        <td>jeacosta@mycompany.com</td>
-	                        <td>45999717273</td>
+		                  <tr th:each="f:${clientes}">
+	                        <td th:text="${f.id}">1</td>
+	                        <td th:text="${f.nome}">Jorge da Silva</td>
+	                        <td th:text="${f.cpf}">000.111.333.44</td>
+	                        <td th:text="${f.email}">jorge@mycompany.com</td>
+	                        <td th:text="${f.telefone}">45999717273</td>
 	                        <td>
-	                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
-	                                    data-toggle="popover" data-placement="top"
-	                                    data-content="Rua Euclides da Cunha, 260 Fundos - Centro, São Miguel do Iguaçu - PR - 85877-000">
-	                                <span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
-	                            </button>
-	                        </td>
-	                        <td>jsilva</td>
-	                        <td>what</td>
-	                        
+		                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+		                                    data-toggle="popover" data-placement="top"
+		                                    th:attr="data-content=${#strings.concat(
+			                                    f.endereco.logradouro, ', ', 
+			                                    f.endereco.numero, ' ', 
+			                                    f.endereco.complemento, ' - ', 
+			                                    f.endereco.bairro, ', ',
+			                                    f.endereco.cidade, ' - ', 
+			                                    f.endereco.uf.sigla, ' - ',
+			                                    f.endereco.cep
+		                                    )}">
+		                                
+		                                <span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
+		                            </button>
+		                        </td>
+		                     <td th:text="${f.login}"></td>
+		                     <td th:text="${f.senha}"></td>
+
 	                        <td></td>
 	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/funcionarios/editar/1" role="button">
+	                            <a class="btn btn-info btn-sm" th:href="@{/funcionarios1/editar/{id} (id=${f.id})}" role="button">
 	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 	                            </a>
-	                            <button id="btn_funcionarios/excluir/1" type="button" class="btn btn-danger btn-sm"
+	                            <button id="${'btn_funcionarios1/excluir/'+ f.id }" type="button" class="btn btn-danger btn-sm"
 	                                    data-toggle="modal" data-target="#myModal">
 	                                <span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
 	                            </button>

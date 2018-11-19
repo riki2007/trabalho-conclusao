@@ -44,4 +44,14 @@ public class ProdutoServicoImpl implements ProdutoService {
 		
 		return dao.findAll();
 	}
+
+	@Override
+	public boolean ProdutoTemOrdens(Long id) {
+		if(buscarPorId(id).getOrdens2().isEmpty()) {
+			return false;
+		}
+		return true;
+	}
+
+	
 }
