@@ -39,12 +39,12 @@ public class ProdutoController {
 	
 	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id, ModelMap model ) {
-		if(!service.ProdutoTemOrdens(id)) {
+		/*if(!service.ProdutoTemOrdens(id)) {
 			model.addAttribute("fail", "Produto não removido. Possui este produto esta atrelado a outro coponentes do sistema.");
-		}else {
+		}else {*/
 			service.excluir(id);
 			model.addAttribute("success", "Produto excluído com sucesso.");
-		}
+		//}
 		return "redirect:/produtos/listar";
 		
 	}

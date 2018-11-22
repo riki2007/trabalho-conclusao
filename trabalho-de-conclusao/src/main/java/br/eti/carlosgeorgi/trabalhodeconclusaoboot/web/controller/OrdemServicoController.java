@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,17 +31,19 @@ public class OrdemServicoController {
 	private Funcionario1Service funcionariosService;
 
 	@GetMapping("/cadastrar")
-	public String cadastrar(OrdemServico ordem){
-		return "/ordens/cadastro";
+	public String cadastrar(OrdemServico OS){
+		return "/ordem/cadastro";
 	}
 	
+	
 	@GetMapping("/listar")
-	public String listar(){
-		return "/ordens/lista";
+	public String listar(ModelMap model){
+		model.addAttribute("ordens", service.buscarTodos());
+		return "/ordem/lista";
 	}
 	@PostMapping("/salvar")
-	public String salvar(OrdemServico ordem , RedirectAttributes attr) {
-		service.salvar(ordem);
+	public String salvar(OrdemServico OS, RedirectAttributes attr) {
+		service.salvar(OS);
 		attr.addFlashAttribute("success", "OS cadastrada com sucesso.");
 		return "redirect:/ordens/cadastrar";
 	}
